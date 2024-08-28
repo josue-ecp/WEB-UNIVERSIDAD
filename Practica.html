@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="img/yo.jpg" alt="Foto de Josue" class="profile-pic">
+        <h1>¡Hola, soy Josue!</h1>
+        <p class="p1">Desarrollador web | Programador | Estudiante de EVND</p>
+    </header>
+    
+    <section id="sobre-mi" data-aos="fade-right">
+        <h2>Sobre mí</h2>
+        <p class="p2">Me gusta estudiar programación. Me encanta el área de desarrollo web y siempre estoy buscando aprender y mejorar.</p>
+    </section>
+
+    <section id="habilidades" data-aos="fade-left">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>Diseño UX/UI</li>
+            <li>PHP</li>
+            <li>Frameworks como Laravel</li>
+        </ul>
+    </section>
+
+    <section id="proyectos" data-aos="fade-up">
+        <h2>Mis Proyectos</h2>
+        <div class="project-item" data-aos="zoom-in">
+            <img src="img/landing.png" alt="Proyecto 1" class="project-image">
+            <h3>Landing Page</h3>
+            <p>Diseño y desarrollo de una landing page para un videojuego creado en colaboración con mi equipo en la universidad.</p>
+        </div>
+        <div class="project-item" data-aos="zoom-in">
+            <img src="img/netflix.png" alt="Proyecto 2" class="project-image">
+            <h3>Netflix</h3>
+            <p>Desarrollo de una aplicación web que replica la interfaz y funcionalidad de Netflix.</p>
+        </div>
+        <div class="project-item" data-aos="zoom-in">
+            <img src="img/spotify.png" alt="Proyecto 3" class="project-image">
+            <h3>Spotify</h3>
+            <p>Creación de una aplicación web inspirada en Spotify, con un diseño intuitivo que permite a los usuarios explorar y reproducir música en streaming.</p>
+        </div>
+    </section>
+
+    <section id="contacto" data-aos="zoom-in">
+        <h2>Contacto</h2>
+        <p>Puedes encontrarme en:</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/josue.ceh.31?mibextid=ZbWKwL" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/josue.ecp?igsh=MTcxcW82cXp1ajJyZQ==" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:josueceh1@gmail.com" class="social-icon" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <a href="https://wa.me/529999709920?text=Hola%20Josue%2C%20quiero%20hacer%20una%20consulta" class="contact-button" data-aos="fade-up">Envíame un mensaje</a>
+    </section>
+
+    <a href="#top" class="back-to-top">↑ Volver Arriba</a>
+
+    <footer>
+        <p class="p1">© 2024 Josue. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Popup de bienvenida -->
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="popup-content">
+            <h2>¡Bienvenido!</h2>
+            <p>Gracias por visitar mi página. Si quieres ponerte en contacto, ¡haz clic en el botón de contacto!</p>
+            <button id="closePopup" class="popup-close">×</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1200, // Duración de la animación
+            });
+
+            // Mostrar el popup de bienvenida al cargar la página
+            const popup = document.getElementById('welcomePopup');
+            const closeButton = document.getElementById('closePopup');
+
+            // Mostrar el popup después de 1 segundo
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 1000);
+
+            // Cerrar el popup
+            closeButton.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
